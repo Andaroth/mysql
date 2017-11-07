@@ -31,10 +31,10 @@
                         <label for="register_passTwo">Confirmez</label>
                     </div>
                     <div>
-                        <input type="text" name="username" id="register_username"><br>
-                        <input type="password" name="mail" id="register_mail"><br>
-                        <input type="password" name="passOne" id="register_passOne"><br>
-                        <input type="password" name="passTwo" id="register_passTwo">
+                        <input type="text" name="username" id="register_username" autocomplete="off" placeholder=""><br>
+                        <input type="email" name="mail" id="register_mail" autocomplete="off" value=""><br>
+                        <input type="password" name="passOne" id="register_passOne" autocomplete="off" ><br>
+                        <input type="password" name="passTwo" id="register_passTwo" autocomplete="off" >
                     </div>
                 </div>
                 <input type="submit">
