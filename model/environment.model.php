@@ -9,14 +9,13 @@ $dbpass = "becodeorg";
 require_once("./model/connect.model.php");
 
 /* Functions */
-function addUser($username,$email,$pass) {
+function addUser($username,$mail,$pass) {
     global $db;
-    $pass = hash('sha256',$pass);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $do = "INSERT INTO my_users (username,mail,pass) VALUES ('".$username."','".$email."','".$pass."')";
+    $pass = hash("sha256",$pass);
+    $do = "INSERT INTO my_users (username,mail,pass) VALUES ('".$username."','".$mail."','".$pass."')";
     try {
         $db->exec($do);
-    } catch(Exception $e) {echo("Error : ".$e->getMessage());die();}
+    } catch(Exception $e) {echo("Error addUser : ".$e->getMessage());die();}
 }
 
 /* Global queries */
