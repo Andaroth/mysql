@@ -50,13 +50,11 @@ CREATE TABLE `my_users` (
 --
 -- Index pour les tables exportées
 --
-
---
--- Index pour la table `my_users`
---
-ALTER TABLE `my_users`
+ALTER TABLE `my_news`
   ADD PRIMARY KEY (`ID`);
 
+ALTER TABLE `my_users`
+  ADD PRIMARY KEY (`ID`);
 --
 -- AUTO_INCREMENT pour les tables exportées
 --
