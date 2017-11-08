@@ -1,29 +1,30 @@
 <?php
     $test = 0;
+    $backhome = ", <a href=\"./\">retourner à l'accueil</a>";
     if (!(isset($_POST["username"]))) {
-        $userError = "username undefined";
+        echo "<p>username undefined</p>".$backhome;
         $test++;
     } else if (trim(($_POST["username"])) == "") {
-        $userError = "Entre ton nom";
+        echo "<p>Entre ton nom</p>".$backhome;
         $test++;
     } else if (!(isset($_POST["mail"]))) {
-        $userError = "Entre ton mail";
+        echo "<p>Entre ton mail</p>".$backhome;
         $test++;
     } else if (!(filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL))) {
-        $userError = "Format de mail invalide";
+        echo "<p>Format de mail invalide</p>".$backhome;
         $test++;
     } else if (!(isset($_POST["passOne"]))) {
-        $userError = "Entre ton mot de passe deux fois";
+        echo "<p>Entre ton mot de passe deux fois</p>".$backhome;
         $test++;
     } else if (!(isset($_POST["passTwo"]))) {
-        $userError = "Entre ton mot de passe deux fois";
+        echo "<p>Entre ton mot de passe deux fois</p>".$backhome;
         $test++;
     } else if ($_POST["passOne"] == "") {
-        $userError = "Entre ton mot de passe deux fois";
+        echo "<p>Entre ton mot de passe deux fois</p>".$backhome;
     } else if ($_POST["passTwo"] == "") {
-        $userError = "Entre ton mot de passe deux fois";
+        echo "<p>Entre ton mot de passe deux fois</p>".$backhome;
     } else if ($_POST["passOne"] != $_POST["passTwo"]) {
-        $userError = "Les mots de passes ne correspondent pas";
+        echo "<p>Les mots de passes ne correspondent pas</p>".$backhome;
         $test++;
     } 
     if ($test == 0) 
@@ -34,18 +35,15 @@
         $select = $db->query("SELECT COUNT(username) AS count FROM my_users WHERE username = '".$username."'");
         $row = $select->fetch();
         $count = $row['count'];
-        if($count > 0)
-            echo 
-            "<p>Username déjà utilisé</p>
-            ".'<a href="./">Retour</a>';
-        else {
+        if($count > 0) {
+            ?>
+<p>Username déjà utilisé</p>
+    <a href="./">Retour</a>
+<?php } else {
             $_SESSION["logged"] = 1;
             $_SESSION["username"] = $username;
             echo "<p>Bonjour ".$username.", tu peux maintenant "; 
             echo '<a href="./">voir le blogroll</a>';
             addUser($username,$mail,$pass);
         }
-        
-?>
-    <p>Register</p>
-<?php } else {echo '<br/><a href="./">Retour</a>';} ?>
+} ?>

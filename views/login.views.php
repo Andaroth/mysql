@@ -8,9 +8,9 @@
     if($count==1) {
         $_SESSION["logged"] = 1;
         $_SESSION["username"] = $username;
-        echo 
-            "<p>Tu t'es connecté comme il faut</p>
-            ".
-            '<a href="./">Voir les news</a>';
+        ?>
+<p>Tu t'es connecté comme il faut</p>".
+    <a href="./">Voir les news</a>
+<?php 
     } else { echo '<p>Mot de passe incorrect</p><a href="./">Retour</a>';}
 } ?>

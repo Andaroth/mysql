@@ -13,7 +13,7 @@ foreach ($getNews as $thisQuery) {
 ".
 "        <p>".$n_content."</p>
 ".
-"        <div class=\"date\">".$n_date."</div>
+"        <div class=\"date\">Date: ".$n_date."</div>
 ".
 "    </article>
 ";
