@@ -4,14 +4,14 @@
 // get all the news
 foreach ($getNews as $thisQuery) {
     $n_title = htmlspecialchars($thisQuery["title"]);
-    $n_content = htmlspecialchars($thisQuery["content"]);
+    $n_content = $thisQuery["content"];
     $n_date = $thisQuery["date"];
     echo 
 "    <article class=\"news\">
 ".
 "        <h2>".$n_title."</h2>
 ".
-"        <p>".$n_content."</p>
+"        ".$n_content."
 ".
 "        <div class=\"date\">Date: ".$n_date."</div>
 ".

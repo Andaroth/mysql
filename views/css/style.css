@@ -1,5 +1,82 @@
+body {
+    display: flex;
+    background: #dedede;
+}
+h1, h2 {
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 3px;
+}
+h1 {
+    margin-top: 0;
+    background: skyblue;
+}
+#all {
+    background: white;
+    display: block;
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid grey;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px black;
+    text-align: center;
+}
+article {
+    max-width: 400px;
+}
+article h2 {
+    background: white;
+    color: black;
+}
 .twocol {
     display: grid;
     grid-template-columns: 50% 50%;
-    max-width: 300px;
+    width: 255px;
+    text-align: left;
+    margin: 0 auto;
+}
+label {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid lightgrey;
+}
+input {
+    width: 100%;
+}
+input[type=text] {
+    display: block;
+}
+input[type=submit] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+}
+article {
+    border: 1px dashed grey;
+    border-radius: 5px;
+    padding: 0 5px;
+    margin: 10px auto;
+}
+article h2 {
+    margin: 0;
+    border-bottom: 1px dotted grey;
+}
+a, input[type=submit] {
+    display: block;
+    background: green;
+    color: white;
+    margin: 10px auto;
+    padding: 5px;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    transition: .1s ease-out;
+    max-width: 200px;
+}
+a:hover,
+input[type=submit]:hover {
+    transform: scale(.9);
+    cursor: pointer;
 }

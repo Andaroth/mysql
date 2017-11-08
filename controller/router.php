@@ -3,21 +3,25 @@
 <html lang="fr">
     <?php include("./views/head.views.php"); ?>
 <body>
-    <?php echo $userError; ?>
-    
+<div id="all">
     <h1>Anda Private Blog</h1>
-    <p>Page privée des news</p>
+    <?php echo $userError; ?>
+    <em>Page privée des news</em>
     <?php
     $uri = explode("/", $_SERVER["REQUEST_URI"]);
     $page = $uri[2] != "" ? $uri[2] : "homepage";
     $view = "./views/" . $page . ".views.php";
-    if (file_exists($view))  {
-        $getPage = $view;
+    if (count($uri) > 3) {
+        header("Location: http://".$_SERVER['HTTP_HOST']."/becode_mysql/");
+    }
+    else if (!(file_exists($view)))  {
+        $getPage = "./views/homepage.views.php";
     }
     else {
-        $getPage = "./views/homepage.views.php";
+        $getPage = $view;
     }
     include($getPage);
     ?>
+</div>
 </body>
 </html>

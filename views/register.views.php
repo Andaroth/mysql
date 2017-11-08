@@ -45,5 +45,6 @@
             echo "<p>Bonjour ".$username.", tu peux maintenant "; 
             echo '<a href="./">voir le blogroll</a>';
             addUser($username,$mail,$pass);
+            header("Refresh: 1; http://".$_SERVER['HTTP_HOST']."/becode_mysql/");
         }
-} ?>
+} else { header("Refresh: 1; http://".$_SERVER['HTTP_HOST']."/becode_mysql/"); } ?>

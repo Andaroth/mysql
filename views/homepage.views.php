@@ -8,15 +8,15 @@
             <form action="./login" method="post">
                 <div class="twocol">
                     <div>
-                        <label for="login_username">Nom d'utilisateur</label><br>
+                        <label for="login_username">Nom d'utilisateur</label>
                         <label for="login_pass">Mot de passe</label>
                     </div>
                     <div>
-                        <input type="text" name="username" id="login_username"><br>
+                        <input type="text" name="username" id="login_username">
                         <input type="password" name="pass" id="login_pass">
                     </div>
                 </div>
-                <input type="submit">
+                <input type="submit" value="Connexion">
             </form>
         </div>
         <div>
@@ -24,19 +24,19 @@
             <form action="./register" method="post">
                 <div class="twocol">
                     <div>
-                        <label for="register_username">Nom d'utilisateur</label><br>
-                        <label for="register_mail">Votre e-mail</label><br>
-                        <label for="register_passOne">Mot de passe</label><br>
+                        <label for="register_username">Nom d'utilisateur</label>
+                        <label for="register_mail">Votre e-mail</label>
+                        <label for="register_passOne">Mot de passe</label>
                         <label for="register_passTwo">Confirmez</label>
                     </div>
                     <div>
-                        <input type="text" name="username" id="register_username" autocomplete="off"><br>
-                        <input type="email" name="mail" id="register_mail" autocomplete="off"><br>
-                        <input type="password" name="passOne" id="register_passOne" autocomplete="off"><br>
+                        <input type="text" name="username" id="register_username" autocomplete="off">
+                        <input type="email" name="mail" id="register_mail" autocomplete="off">
+                        <input type="password" name="passOne" id="register_passOne" autocomplete="off">
                         <input type="password" name="passTwo" id="register_passTwo" autocomplete="off">
                     </div>
                 </div>
-                <input type="submit">
+                <input type="submit" value="Inscription">
             </form>
         </div>
     </div>
