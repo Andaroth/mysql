@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION["logged"])) {
+if ((isset($_SESSION["logged"])) && (isset($_SESSION["username"]))) {
     $logged = $_SESSION["logged"];
     $loggedusername = $_SESSION["username"];
 } else {
