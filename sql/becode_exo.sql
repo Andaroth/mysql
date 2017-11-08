@@ -44,7 +44,8 @@ CREATE TABLE `my_users` (
   `username` text COLLATE utf8_bin NOT NULL,
   `mail` text COLLATE utf8_bin NOT NULL,
   `pass` text COLLATE utf8_bin NOT NULL,
-  `auth` int(11) NOT NULL DEFAULT '0'
+  `auth` int(11) NOT NULL DEFAULT '0',
+  `joindate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
