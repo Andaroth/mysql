@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<?php include("./model/environment.model.php"); ?>
+<html lang="fr">
+    <?php include("./views/head.views.php"); ?>
+<body>
+    <h1>Anda Private Blog</h1>
+        <p>Page privée des news</p>
 <?php
 $uri = explode("/", $_SERVER["REQUEST_URI"]);
 $page = $uri[2] != "" ? $uri[2] : "homepage";
@@ -10,3 +17,5 @@ else {
 }
 include($getPage);
 ?>
+</body>
+</html>

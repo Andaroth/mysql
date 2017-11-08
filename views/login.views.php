@@ -2,11 +2,15 @@
     if ((isset($_POST["username"])) && (isset($_POST["pass"]))) { 
     $username = htmlspecialchars($_POST["username"]);
     $pass = hash("sha256", htmlspecialchars($_POST["pass"]));
-    $select = $db->exec("SELECT username, pass FROM my_users WHERE username = '".$username."' AND pass = '".$pass."'");
-    if(mysqli_num_rows($select)) {
-        echo "ah";
-    } else { echo "iie"; }
+    $select = $db->query("SELECT COUNT(*) AS count FROM my_users WHERE username = '".$username."' AND pass = '".$pass."'");
+    $row = $select->fetch();
+    $count = $row['count'];
+    if($count==1) {
+        $_SESSION["logged"] = 1;
+        echo 
+            "<p>Tu t'es connecté comme il faut</p>
+            ".
+            '<a href="./">Voir les news</a>';
+    } else { echo '<p>Mot de passe incorrect</p><a href="./">Retour</a>';}
 ?>
-<h1>Anda Private Blog</h1>
-    <p>Login</p>
 <?php } ?>

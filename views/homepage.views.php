@@ -1,8 +1,7 @@
 <?php
-    if (!$logged) {
+    if ($logged == 0) {
 ?>
-<h1>Anda Private Blog</h1>
-    <p>Inscrivez-vous ou connectez-vous pour découvrir le blogroll</p>
+<p>Inscrivez-vous ou connectez-vous pour découvrir le blogroll</p>
     <div class="loginout">
         <div>
             <h2>Se connecter</h2>

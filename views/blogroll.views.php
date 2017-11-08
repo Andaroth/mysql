@@ -1,7 +1,5 @@
 <?php
-// if ($logged) { ?>
-<h1>Anda Private Blog</h1>
-    <p>Page privée des news</p>
+ if ($logged == 1) { ?>
 <?php 
 // get all the news
 foreach ($getNews as $thisQuery) {
@@ -20,6 +18,10 @@ foreach ($getNews as $thisQuery) {
 "    </article>
 ";
     
-} /* else {
-include("./views/homepage.views.php);
-*/ ?>
+} 
+?>
+ <form action="./index.php" method="get"><input type="submit" name="deco" value="LogOut"></form>
+<?php 
+} else {
+include("./views/homepage.views.php");
+} ?>
