@@ -1,5 +1,5 @@
 <?php
- if ($logged == 1) { ?>
+ if ($logged == 1) { $userError = "<p>Connecté en tant que ".$loggedusername."</p>"; ?>
 <?php 
 // get all the news
 foreach ($getNews as $thisQuery) {

@@ -5,6 +5,8 @@ $dbname = "becode_exo";
 $dbuser = "becodesql";
 $dbpass = "becodeorg";
 
+$userError = "";
+
 /* Includes and require */
 require_once("./model/connect.model.php");
 require_once("./model/session.model.php");

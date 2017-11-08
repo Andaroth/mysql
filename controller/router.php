@@ -3,6 +3,7 @@
 <html lang="fr">
     <?php include("./views/head.views.php"); ?>
 <body>
+    <?php echo $userError; ?>
     <h1>Anda Private Blog</h1>
         <p>Page privée des news</p>
 <?php
