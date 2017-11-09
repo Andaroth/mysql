@@ -1,3 +1,7 @@
+*:focus,
+*:active {
+    outline: none;
+}
 body {
     display: flex;
     background: #dedede;
@@ -29,6 +33,9 @@ article h2 {
     background: white;
     color: black;
 }
+.date {
+    border-top: 1px dotted grey;
+}
 .twocol {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -40,12 +47,24 @@ label {
     width: 100%;
     display: block;
     border-bottom: 1px solid lightgrey;
+    height: 20px;
+    box-sizing: border-box;
 }
 input {
     width: 100%;
 }
-input[type=text] {
+input[type=text],
+input[type=password] {
     display: block;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px dashed lightgrey;
+    border-top: 0;
+    border-bottom: 1px solid grey;
+    text-transform: capitalize;
+}
+input.first {
+    border-top: 1px dashed lightgrey;
 }
 input[type=submit] {
     display: block;
@@ -76,7 +95,9 @@ a, input[type=submit] {
     max-width: 200px;
 }
 a:hover,
-input[type=submit]:hover {
+a:active,
+input[type=submit]:hover,
+input[type=submit]:active {
     transform: scale(.9);
     cursor: pointer;
 }

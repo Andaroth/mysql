@@ -22,6 +22,7 @@
     }
     include($getPage);
     ?>
+    <script src="./views/js/app.js"></script>
 </div>
 </body>
 </html>

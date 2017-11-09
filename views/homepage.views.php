@@ -12,8 +12,8 @@
                         <label for="login_pass">Mot de passe</label>
                     </div>
                     <div>
-                        <input type="text" name="username" id="login_username">
-                        <input type="password" name="pass" id="login_pass">
+                        <input class="clearform first" type="text" name="username" id="login_username" placeholder="username">
+                        <input class="clearform" type="password" name="pass" id="login_pass" placeholder="password">
                     </div>
                 </div>
                 <input type="submit" value="Connexion">
@@ -21,7 +21,7 @@
         </div>
         <div>
             <h2>S'inscrire</h2>
-            <form action="./register" method="post">
+            <form action="./register" method="post" autocomplete="off">
                 <div class="twocol">
                     <div>
                         <label for="register_username">Nom d'utilisateur</label>
@@ -30,10 +30,10 @@
                         <label for="register_passTwo">Confirmez</label>
                     </div>
                     <div>
-                        <input type="text" name="username" id="register_username" autocomplete="off">
-                        <input type="email" name="mail" id="register_mail" autocomplete="off">
-                        <input type="password" name="passOne" id="register_passOne" autocomplete="off">
-                        <input type="password" name="passTwo" id="register_passTwo" autocomplete="off">
+                        <input class="clearform first" type="text" name="username" id="register_username" autocomplete="off" placeholder="username">
+                        <input class="clearform" type="text" name="mail" id="register_mail" autocomplete="off" placeholder="mail">
+                        <input class="clearform" type="password" name="passOne" id="register_passOne" autocomplete="off" placeholder="password">
+                        <input class="clearform" type="password" name="passTwo" id="register_passTwo" autocomplete="off" placeholder="password">
                     </div>
                 </div>
                 <input type="submit" value="Inscription">

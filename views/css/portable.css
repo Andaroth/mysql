@@ -1,0 +1,24 @@
+.twocol {
+    grid-template-columns: 100%;
+}
+.twocol > div:first-child {
+    display: none;
+}
+article {
+    margin: 10px;
+}
+input {
+    height: 40px;
+}
+input[type=text],
+input[type=password]{
+    height: 40px;
+    margin: 10px 0;
+    text-align: center;
+    border: 1px solid lightgrey;
+    box-shadow: 0 1px 2px grey;
+}
+a:hover,
+input[type=submit]:hover {
+    transform: none;
+}

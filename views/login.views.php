@@ -1,6 +1,6 @@
 <?php
 if ((isset($_POST["username"])) && (isset($_POST["pass"]))) { 
-$username = trim(htmlspecialchars($_POST["username"]));
+$username = strtolower(trim(htmlspecialchars($_POST["username"])));
 $pass = hash("sha256", htmlspecialchars($_POST["pass"]));
 $select = $db->query("SELECT COUNT(*) AS count FROM my_users WHERE username = '".$username."' AND pass = '".$pass."'");
 $row = $select->fetch();
