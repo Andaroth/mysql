@@ -20,7 +20,7 @@ foreach ($getNews as $thisQuery) {
     
 } 
 ?>
- <form action="./index.php" method="get"><input type="submit" name="deco" value="LogOut"></form>
+ <form action="./" method="get"><input type="submit" name="deco" value="LogOut"></form>
 <?php 
 } else {
 include("./views/homepage.views.php");

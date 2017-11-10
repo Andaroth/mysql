@@ -5,6 +5,7 @@
 body {
     display: flex;
     background: #dedede;
+    font-family: "Barlow Condensed";
 }
 h1, h2 {
     text-align: center;
@@ -47,20 +48,31 @@ label {
     width: 100%;
     display: block;
     border-bottom: 1px solid lightgrey;
-    height: 20px;
+    height: 30px;
+    line-height: 30px;
     box-sizing: border-box;
+    text-align: right;
+    padding-right: 3px;
 }
-input {
+input, textarea {
     width: 100%;
 }
 input[type=text],
-input[type=password] {
+input[type=longtext],
+input[type=password],
+textarea {
     display: block;
-    height: 20px;
+    height: 30px;
     box-sizing: border-box;
     border: 1px dashed lightgrey;
     border-top: 0;
     border-bottom: 1px solid grey;
+    padding-left: 5px;
+}
+textarea {
+    min-height: 250px; 
+}
+input.inputupper {
     text-transform: capitalize;
 }
 input.first {
@@ -70,6 +82,11 @@ input[type=submit] {
     display: block;
     margin: 10px auto;
     padding: 10px;
+    box-shadow: 0 1px 2px grey;
+}
+.newsform {
+    border: none;
+    border-bottom: 1px dashed black;
 }
 article {
     border: 1px dashed grey;
@@ -80,6 +97,9 @@ article {
 article h2 {
     margin: 0;
     border-bottom: 1px dotted grey;
+}
+article img {
+    max-width: 100%;
 }
 a, input[type=submit] {
     display: block;
