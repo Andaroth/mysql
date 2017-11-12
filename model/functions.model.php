@@ -2,9 +2,8 @@
 /* Functions */
 function addUser($username,$mail,$pass) {
     global $db;
-    $do = "INSERT INTO my_users (username,mail,pass) VALUES ('".$username."','".$mail."','".$pass."')";
     try {
-        $db->exec($do);
+        $db->exec("INSERT INTO my_users (username,mail,pass) VALUES ('".$username."','".$mail."','".$pass."')");
     } catch(Exception $e) {echo("Error addUser : ".$e->getMessage());die();}
 }
 
@@ -20,9 +19,8 @@ function getAuthLevel($username) {
 function addNews($title,$content,$auth) {
     if ($auth > 0) {
         global $db;
-        $do = "INSERT INTO my_news (title,content) VALUES ('".$title."','".$content."')";
         try {
-            $db->exec($do);
+            $db->exec("INSERT INTO my_news (title,content) VALUES ('".$title."','".$content."')");
         } catch(Exception $e) {echo("Error addNews : ".$e->getMessage());die();}
     } else{echo "<p>Cheatin !</p>"; }
 }

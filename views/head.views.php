@@ -1,6 +1,6 @@
 <head>
         <meta charset="UTF-8">
-        <title>Anda Private Blog (APB, Ah Pas Bien !)</title>
+        <title><?php echo $siteTitle; ?> (APB, Ah Pas Bien !)</title>
         
         <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet"> 
         

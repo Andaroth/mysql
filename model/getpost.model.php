@@ -10,11 +10,11 @@ if ((isset($_SESSION["logged"])) &&
 }
 
 if ((isset($_GET["deco"])) && 
-    ($_GET["deco"] == "LogOut")) {
+    ($_GET["deco"] == "Se déconnecter")) {
     if ($logged == 1) {
         $logged = 0;
         session_destroy();
-        $userError = "<p>Tu es bien déconnecté.</p>";
+        $userFeedback = "<p>Tu es bien déconnecté.</p>";
     }
 }
 
@@ -28,7 +28,7 @@ if ((isset($_POST["news_title"])) &&
         $content = addslashes($_POST["news_content"]);
         $auth = $_SESSION["auth"];
         addNews($title,$content,$auth);
-        $userError = "<p>News ajoutée avec succès !</p>";
+        $userFeedback = "<p>News ajoutée avec succès !</p>";
     }
 
 ?>

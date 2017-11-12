@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<?php include("./model/environment.model.php"); ?>
-<html lang="fr">
-    <?php include("./views/head.views.php"); ?>
-<body>
-<div id="all">
-    <h1>Anda Private Blog</h1>
-    <?php echo $userError; ?>
-    <em>Page privée des news</em>
-    <?php
-    $uri = explode("/", $_SERVER["REQUEST_URI"]);
-    $page = $uri[2] != "" ? $uri[2] : "homepage";
-    $view = "./views/" . $page . ".views.php";
-    if (count($uri) > 3) {
-        header("Location: http://".$_SERVER['HTTP_HOST']."/becode_mysql/");
-    }
-    else if (!(file_exists($view)))  {
-        $getPage = "./views/homepage.views.php";
-    }
-    else {
-        $getPage = $view;
-    }
-    include($getPage);
-    ?>
-    <script src="./views/js/app.js"></script>
-</div>
-</body>
-</html>
+<?php
+$uri = explode("/", $_SERVER["REQUEST_URI"]); // Récupérer tout ce qu'il y a après le caractère "/"
+$page = $uri[2] != "" ? $uri[2] : "homepage";  // En faire une variable ("homepage" si vide)
+$view = "./views/" . $page . ".views.php"; // On va utiliser la variable pour cibler la view
+if (count($uri) > 3) { // Redirection si l'utilisateur veut aller dans une arborescence trop profonde
+    header("Location: http://".$_SERVER['HTTP_HOST']."/becode_mysql/");
+}
+else if (!(file_exists($view)))  { // Si la view n'existe pas, on donne la homepage
+    $getPage = "./views/homepage.views.php";
+}
+else { // Si tout est OK
+    $getPage = $view;
+}
+// Ensuite on lance l'index des views
+require("./views/index.views.php"); 
+?>

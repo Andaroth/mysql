@@ -1,8 +1,8 @@
 <?php
- if ($logged == 1) { $userError = "<p>Connecté en tant que ".$loggedusername."</p>"; ?>
-<?php 
-// get all the news
-foreach ($getNews as $thisQuery) {
+// Si l'utilisateur est connecté
+ if ($logged == 1) { $userFeedback = "Connecté en tant que ".$loggedusername; // Lui indiquer son pseudo
+// Charger les news
+foreach ($getNews as $thisQuery) { // Exécuter $getNews sous le tableau $thisQuery
     $n_title = htmlspecialchars($thisQuery["title"]);
     $n_content = $thisQuery["content"];
     $n_date = $thisQuery["date"];
@@ -18,10 +18,10 @@ foreach ($getNews as $thisQuery) {
 "    </article>
 ";
     
-} 
+} // Fin du loader de news. On affiche un bouton pour se déconnecter
 ?>
- <form action="./" method="get"><input type="submit" name="deco" value="LogOut"></form>
+ <form action="./" method="get"><input type="submit" name="deco" value="Se déconnecter"></form>
 <?php 
 } else {
 include("./views/homepage.views.php");
-} ?>
+} 

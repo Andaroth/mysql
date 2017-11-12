@@ -1,5 +1,10 @@
 <?php
-    if ($logged == 0) {
+    // Si l'utilisateur est connecté, on lui montre les news
+    if ($logged == 1) {
+        echo "<p class=\"logged\">Connecté en tant que <b>".ucfirst($_SESSION["username"])."</b></p>";
+        include("./views/blogroll.views.php");
+        include("./views/postnews.views.php");
+    } else { // Sinon on affiche la landing page traditionnelle
 ?>
 <p>Inscrivez-vous ou connectez-vous pour découvrir le blogroll</p>
     <div class="loginout">
@@ -41,17 +46,4 @@
         </div>
     </div>
 
-    <?php } else { 
-    echo "<p>Connecté en tant que <b>".ucfirst($_SESSION["username"])."</b></p>";
-    include("./views/blogroll.views.php");
-    $_SESSION["auth"] = intval(getAuthLevel($_SESSION["username"]));
-    $auth = $_SESSION["auth"];
-    if ($auth > 0) { ?>
-    <form action="./" method="post" autocomplete="off">
-        <h2>Ajouter une news</h2>
-        <input id="news_title" class="newsform" type="text" name="news_title" placeholder="Choisissez un titre">
-        <textarea id="news_content" class="newsform" type="longtext" name="news_content" placeholder="Saisissez le texte de votre news."></textarea>
-        <input type="submit">
-        
-    </form>
-    <?php } } ?>
+    <?php } // Il faut refermer le else 

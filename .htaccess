@@ -1,3 +1,2 @@
 RewriteEngine on
-
-RewriteRule ^((\w+)/?)?$ index.php
+RewriteRule ^((\w+)/?)?$ masterIamHereToServeYou.php
