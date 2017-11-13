@@ -42,9 +42,10 @@
 <?php } else {
             $_SESSION["logged"] = 1;
             $_SESSION["username"] = $username;
-            echo "<p>Bonjour ".$username.", tu peux maintenant "; 
+            $_SESSION["user_id"] = intval(getUserId($username));
+            echo "<p>Bonjour ".ucfirst($username).", tu peux maintenant "; 
             echo '<a href="./">voir le blogroll</a>';
             addUser($username,$mail,$pass);
-            header("Refresh: 1; http://".$_SERVER['HTTP_HOST']."/becode_mysql/");
+            header("Refresh: 3; http://".$_SERVER['HTTP_HOST']."/becode_mysql/");
         }
-} else { header("Refresh: 1; http://".$_SERVER['HTTP_HOST']."/becode_mysql/"); } 
+} else { header("Refresh: 3; http://".$_SERVER['HTTP_HOST']."/becode_mysql/"); } 

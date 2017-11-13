@@ -2,6 +2,8 @@
     // Si l'utilisateur est connecté, on lui montre les news
     if ($logged == 1) {
         echo "<p class=\"logged\">Connecté en tant que <b>".ucfirst($_SESSION["username"])."</b></p>";
+        echo "<form action=\"./\" method=\"get\"><input type=\"submit\" name=\"deco\" value=\"Se déconnecter\"></form>";
+        include("./views/shoutbox.views.php");
         include("./views/blogroll.views.php");
         include("./views/postnews.views.php");
     } else { // Sinon on affiche la landing page traditionnelle
